@@ -6,7 +6,7 @@ import static io.restassured.RestAssured.*;
 public class Get01 {
     /*
     1.Postman , manuel Api testleri icin kullandik
-    2.Otomasyon tetsleri icn de Rest Assured Library kullanacagiz
+    2.Otomasyon tetsleri icin de Rest Assured Library kullanacagiz
     3.Otomasyon testleri icin su adimlari izliyoruz
        a)Gereksinimleri anlamak
        b)Test case yaziyoruz
@@ -37,26 +37,38 @@ And Status Line should be HTTP/1.1 200 0K
      */
 
     @Test
-    public void get01(){
+    public void get01() {
         //i) set the URL
-        String url="https://restful-booker.herokuapp.com/booking/101";
+        String url = "https://restful-booker.herokuapp.com/booking/541";
         //ii) set the expected Data (beklenen datanin olusturulmasi -->post(),put(),patch())
         //bizden suan bu case de bunlari istemdeigi icin bu meth kullanmiyoruz
 
         //
-        Response response=given().when().get(url);
+        Response response = given().when().get(url);
         response.prettyPrint();
 
         //iv)Do Assertion(dogrulama yapmak )
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
 
+        //Status Line should be HTTP/1.1 200 0K
+        System.out.println("Status Code :" + response.statusCode());
+
+        //Content Type konsola yazdir
+        System.out.println("Content Type: " + response.contentType());
+
+        //Status Line konsola yazdir
+        System.out.println("Status Line : " + response.statusLine());
+
+        // Headers konsola yazdir
+        System.out.println("Headers: "+response.getHeaders());
 
 
 
+        //Header konsola yazdir
+        System.out.println("Header : " + response.getHeader("Server"));
 
 
     }
-
 
 
 }
