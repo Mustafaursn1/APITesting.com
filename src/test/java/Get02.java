@@ -21,7 +21,7 @@ public class Get02 {
     @Test
     public void get01() {
         //i)set the Url
-        String url = "https://restful-booker.herokuapp.com/booking/1";
+        String url = "https://restful-booker.herokuapp.com/booking/2";
         //ii) set the expected Data (beklenen datanin olusturulmasi -->post(),put(),patch())
         //bizden suan bu case de bunlari istemdeigi icin bu meth kullanmiyoruz
 
@@ -35,8 +35,11 @@ public class Get02 {
 
         String contain = response.asString();
         System.out.println("contain: " + contain);
+        //Body Not Found iceriyor mu
         Assert.assertTrue(contain.contains("Not Found"));
+        //Body Zalando iceriyor mu
         assertFalse(response.asString().contains("Zalando"));
+        //Server Cowboy mu?
         assertEquals("Cowboy",response.getHeader("Server"));
 
 
