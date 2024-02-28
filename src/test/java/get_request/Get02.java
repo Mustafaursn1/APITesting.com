@@ -42,7 +42,7 @@ public class Get02 {
         //Body Zalando iceriyor mu
         assertFalse(response.asString().contains("Zalando"));
         //Server Cowboy mu?
-        assertEquals("Cowboy",response.getHeader("Server"));
+        assertEquals("Cowboy", response.getHeader("Server"));
 
 
     }

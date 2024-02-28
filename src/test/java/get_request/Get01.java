@@ -62,8 +62,7 @@ And Status Line should be HTTP/1.1 200 0K
         System.out.println("Status Line : " + response.statusLine());
 
         // Headers konsola yazdir
-        System.out.println("Headers: "+response.getHeaders());
-
+        System.out.println("Headers: " + response.getHeaders());
 
 
         //Header konsola yazdir

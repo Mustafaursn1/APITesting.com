@@ -47,9 +47,8 @@ And "userId" is 2
                 assertThat().
                 statusCode(200).
                 contentType(ContentType.JSON).
-                body("title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
-                        "completed",equalTo(false),"userId",equalTo(2));
-
+                body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
+                        "completed", equalTo(false), "userId", equalTo(2));
 
 
     }
