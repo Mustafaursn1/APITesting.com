@@ -106,6 +106,7 @@ public class Get06 extends RestfulBaseUrl {
         softAssert.assertEquals(json.getString("bookingdates.checkin"),"2018-01-01","Date of Checkin  is falsh");
         softAssert.assertEquals(json.getString("bookingdates.checkout"),"2019-01-01","Date of Checkout is falsh");
         softAssert.assertEquals(json.getString("additionalneeds"),"Breakfast","additionalneeds is falsh");
+       //iii softAsert.assertAll() eger kullanmazsak fail olsa bile pass görünür
         softAssert.assertAll();
 
 
