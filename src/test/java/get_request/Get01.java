@@ -45,7 +45,6 @@ And Status Line should be HTTP/1.1 200 0K
         //ii) set the expected Data (beklenen datanin olusturulmasi -->post(),put(),patch())
         //bizden suan bu case de bunlari istemdeigi icin bu meth kullanmiyoruz
 
-        //
         Response response = given().when().get(url);
         response.prettyPrint();
 

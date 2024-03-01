@@ -33,13 +33,13 @@ public class Get07 extends JsonplaceholderBaseUrl {
         //1 set the Url
         spec.pathParam("first", "todos");
 
-        // Send the Expected DATA (put ,patch ,post)-->now is any request
+        // 2 Send the Expected DATA (put ,patch ,post)-->now is any request
 
-        //Send The Request And Get the Response
+        //3 Send The Request And Get the Response
         Response response = given().spec(spec).when().get("/{first}");
         //response.prettyPrint();
 
-        //Do Asserttion
+        //4 Do Asserttion
 
         //1)Status code is 200 == › Status kodu 200 olmali
         response.then().assertThat().statusCode(200);
@@ -52,7 +52,7 @@ public class Get07 extends JsonplaceholderBaseUrl {
         System.out.println("Id si 190 dan büyük olanlar:" + ids);
 
         //Assert that there are 10 ids greater than 190
-        assertEquals("Id 190 dan büyük olan eslesmedi", 10, ids.size());
+        assertEquals("Id 190 dan büyük olan eslesmedi", 10f, ids.size());
 
 
         //3)Print all userIds whose ids are less than 5 on the console
