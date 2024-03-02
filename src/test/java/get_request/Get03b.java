@@ -1,10 +1,12 @@
 package get_request;
 
 import base_url.BaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.*;
 
 public class Get03b extends BaseUrl {
     /*
@@ -43,7 +45,13 @@ public class Get03b extends BaseUrl {
 
         //4 do Assertion
         //HTTP Status Code should be 200
-        response.then().assertThat().statusCode(200).contentType("application/json");
+        response.then().assertThat().statusCode(200).
+                contentType(ContentType.JSON).
+                body("data.email",equalTo("janet.weaver@reqres.in"),
+                        "data.first_name",equalTo("Janet"),
+                        "data.last_name",equalTo("Weaver"),
+                        "support.text",equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+
 
 
 
