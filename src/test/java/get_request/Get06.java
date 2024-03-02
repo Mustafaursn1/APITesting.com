@@ -87,7 +87,7 @@ public class Get06 extends RestfulBaseUrl {
 
         //set the Url
         spec.pathParams("first", "booking", "second", "54");
-        //ser The Expected Date(put ,post patch) -->there is any request
+        //set The Expected Date(put ,post patch) -->there is any request
         //3.Send the Request and Get the Response
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
