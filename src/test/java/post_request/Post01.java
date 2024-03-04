@@ -60,7 +60,7 @@ public class Post01 extends JsonplaceholderBaseUrl {
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("userId"),((Double)actualData.get("userId")).intValue());
-        assertEquals(201,response.getStatusCode()); n
+        assertEquals(201,response.getStatusCode());
         //!!!Json dan gelen data double olarak geldigi icin data typini degistirdik
 
 
