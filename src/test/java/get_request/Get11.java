@@ -56,7 +56,7 @@ public class Get11 extends GoRestBaseUrl {
                 body("meta.pagination.limit", equalTo(10),
                         "meta.pagination.links.current", equalTo("https://gorest.co.in/public/v1/users?page=1"),
                         "data", hasSize(10),
-                        "data.status", hasItem("active"),
+                        "data.status", hasItem("active"),//contains meth gibi calisir
                         "data.name", hasItems("Msgr. Ganapati Jha", "Mrs. Bhardwaj Naik", "Rev. Ananta Arora"));
 
         //Kadin ve erkek sayilarini karsilastiralim
