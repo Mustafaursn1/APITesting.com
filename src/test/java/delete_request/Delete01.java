@@ -1,6 +1,6 @@
 package delete_request;
 
-import base_url.JsonplaceholderBaseUrl;
+import base_url.JsonPlaceholderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Delete01 extends JsonplaceholderBaseUrl {
+public class Delete01 extends JsonPlaceholderBaseUrl {
 
 
     @Test

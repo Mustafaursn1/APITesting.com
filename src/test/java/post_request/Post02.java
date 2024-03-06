@@ -69,6 +69,7 @@ public class Post02 extends RestfulBaseUrl {
         Map<String, Object> actualData = response.as(HashMap.class);//De-serialization
         System.out.println("expectedData: " + expectedData + "\n" + "actualData: " + actualData);
         assertEquals(expectedData.get("firstname"), ((Map) actualData.get("booking")).get("firstname"));
+        //inner map a ulasmak icin Object data typ Map Casting yaptik
         assertEquals(expectedData.get("lastname"), ((Map) actualData.get("booking")).get("lastname"));
         assertEquals(expectedData.get("totalprice"), ((Double)((Map) actualData.get("booking")).get("totalprice")).intValue());
         assertEquals(expectedData.get("depositpaid"), ((Map) actualData.get("booking")).get("depositpaid"));

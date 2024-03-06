@@ -1,6 +1,6 @@
 package get_request;
 
-import base_url.JsonplaceholderBaseUrl;
+import base_url.JsonPlaceholderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import testData.JsonPlaceholderTestData;
@@ -11,7 +11,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Get08b extends JsonplaceholderBaseUrl {
+public class Get08b extends JsonPlaceholderBaseUrl {
     //Serialozation-->Java objesine   Json formatina dönüstürülmesi-->örnegin jsonPath ile bunu yapabiliyoruz
 /*
 De-serialization -->Json formantinin Java  objesine  dönüstürülmesi--iki sekilde yapacagiz

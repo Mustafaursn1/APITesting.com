@@ -1,6 +1,6 @@
 package put_request;
 
-import base_url.JsonplaceholderBaseUrl;
+import base_url.JsonPlaceholderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
 
-public class Put01 extends JsonplaceholderBaseUrl {
+public class Put01 extends JsonPlaceholderBaseUrl {
     /*
     Given
         1) https://jsonplaceholder.typicode.com/todos/198

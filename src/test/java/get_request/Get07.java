@@ -1,6 +1,6 @@
 package get_request;
 
-import base_url.JsonplaceholderBaseUrl;
+import base_url.JsonPlaceholderBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -10,7 +10,7 @@ import java.util.List;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
-public class Get07 extends JsonplaceholderBaseUrl {
+public class Get07 extends JsonPlaceholderBaseUrl {
     /*
     Given
         https://isonplaceholder.tupicode.com/todos
