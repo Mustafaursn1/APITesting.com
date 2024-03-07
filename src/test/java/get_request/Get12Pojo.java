@@ -21,15 +21,15 @@ public class Get12Pojo extends RestfulBaseUrl {
    And
      Response body is like:
      {
-    "firstname": "Josh",
-    "lastname": "Allen",
+    "firstname": "Jane",
+    "lastname": "Doe",
     "totalprice": 111,
     "depositpaid": true,
     "bookingdates": {
         "checkin": "2018-01-01",
         "checkout": "2019-01-01"
     },
-    "additionalneeds": "super bowls"
+    "additionalneeds": "Extra pillows please"
 }
 
 */
@@ -45,7 +45,7 @@ public class Get12Pojo extends RestfulBaseUrl {
         //set the expected Data;
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01", "2019-01-01");
         System.out.println(bookingDatesPojo.toString());
-        BookingPojo expectedData = new BookingPojo("Josh", "Allen", 111, true, bookingDatesPojo, "super bowls");
+        BookingPojo expectedData = new BookingPojo("Jane", "Doe", 111, true, bookingDatesPojo, "Extra pillows please");
 
         System.out.println(expectedData.toString());
 
@@ -68,6 +68,13 @@ public class Get12Pojo extends RestfulBaseUrl {
         assertEquals(expectedData.getDepositpaid(),actualData.getDepositpaid());
         assertEquals(expectedData.getBookingdates().getCheckin(),actualData.getBookingdates().getCheckin());
         assertEquals(expectedData.getBookingdates().getCheckout(),actualData.getBookingdates().getCheckout());
+
+
+        //2.yol inner pojo icin short cut-->suggested
+
+        assertEquals(bookingDatesPojo.getCheckin(),actualData.getBookingdates().getCheckin());
+        assertEquals(bookingDatesPojo.getCheckout(),actualData.getBookingdates().getCheckout());
+
 
 
     }
