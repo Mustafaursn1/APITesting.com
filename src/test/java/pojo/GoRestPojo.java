@@ -1,22 +1,22 @@
 package pojo;
 
-public class GoRestMetaPojo {
-    private String meta;
+public class GoRestPojo {
+    private Object meta;//obje olsa daha iyi olur
     private GoRestDataPojo data;
 
-    public GoRestMetaPojo(String meta, GoRestDataPojo data) {
+    public GoRestPojo(String meta, GoRestDataPojo data) {
         this.meta = meta;
         this.data = data;
     }
 
-    public GoRestMetaPojo() {
+    public GoRestPojo() {
     }
 
-    public String getMeta() {
+    public Object getMeta() {
         return meta;
     }
 
-    public void setMeta(String meta) {
+    public void setMeta(Object meta) {
         this.meta = meta;
     }
 

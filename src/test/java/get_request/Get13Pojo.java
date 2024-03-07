@@ -4,7 +4,7 @@ import base_url.GoRestBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojo.GoRestDataPojo;
-import pojo.GoRestMetaPojo;
+import pojo.GoRestPojo;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
@@ -42,7 +42,7 @@ public class Get13Pojo extends GoRestBaseUrl {
 
         //set the expected Data
         GoRestDataPojo goRestDataPojo=new GoRestDataPojo(6752501,"Fr. Nawal Marar","marar_nawal_fr@altenwerth.example","male","active");
-        GoRestMetaPojo expectedData=new GoRestMetaPojo(null,goRestDataPojo);
+        GoRestPojo expectedData=new GoRestPojo(null,goRestDataPojo);
         System.out.println("expectedData: "+expectedData);
 
         //send the Request and Get the Response
@@ -50,7 +50,7 @@ public class Get13Pojo extends GoRestBaseUrl {
         response.prettyPrint();
 
         //Do Assertion
-        GoRestMetaPojo actualData=response.as(GoRestMetaPojo.class);
+        GoRestPojo actualData=response.as(GoRestPojo.class);
         System.out.println("actualData: "+actualData);
         assertEquals(200,response.statusCode());
         assertEquals(goRestDataPojo.getName(),actualData.getData().getName());
@@ -58,6 +58,7 @@ public class Get13Pojo extends GoRestBaseUrl {
         assertEquals(goRestDataPojo.getGender(),actualData.getData().getGender());
         assertEquals(goRestDataPojo.getStatus(),actualData.getData().getStatus());
         assertEquals(expectedData.getMeta(),actualData.getMeta());
+
 
 
 
