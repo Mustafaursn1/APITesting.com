@@ -12,7 +12,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
-public class Patch01  extends JsonPlaceholderBaseUrl {
+public class Patch01 extends JsonPlaceholderBaseUrl {
 
     /*
     Given
@@ -33,31 +33,29 @@ public class Patch01  extends JsonPlaceholderBaseUrl {
 
 
     @Test
-    public void patch01(){
+    public void patch01() {
         //set the Url
-        spec.pathParams("first","todos","second",198);
+        spec.pathParams("first", "todos", "second", 198);
 
         //set the expected Data
 
-        JsonPlaceholderTestData obj=new JsonPlaceholderTestData();
-        Map<String,Object> expectedData=obj.expectedDataMethod(null,"Wash the dishes",null);
+        JsonPlaceholderTestData obj = new JsonPlaceholderTestData();
+        Map<String, Object> expectedData = obj.expectedDataMethod(null, "Wash the dishes", null);
 
 
-        System.out.println("expectedData: "+expectedData);
+        System.out.println("expectedData: " + expectedData);
 
 
         //send the Request and Get the Response
-        Response response=given().spec(spec).contentType(ContentType.JSON).body(expectedData).patch("/{first}/{second}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).patch("/{first}/{second}");
         response.prettyPrint();
 
         //Do Assertions
 
-        Map<String,Object> actualData=response.as(HashMap.class);
-        System.out.println("actualData: "+actualData+"\n"+"actualData: "+actualData);
-        assertEquals(200,response.statusCode());
-        assertEquals(expectedData.get("title"),actualData.get("title"));
-
-
+        Map<String, Object> actualData = response.as(HashMap.class);
+        System.out.println("actualData: " + actualData + "\n" + "actualData: " + actualData);
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedData.get("title"), actualData.get("title"));
 
 
     }

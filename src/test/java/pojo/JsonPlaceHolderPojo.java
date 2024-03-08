@@ -2,7 +2,8 @@ package pojo;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(ignoreUnknown = true)  //response da olup burda olmayan datayi ignore etmek icin bu anatotion lullanilir
+@JsonIgnoreProperties(ignoreUnknown = true)
+//response da olup burda olmayan datayi ignore etmek icin bu anatotion lullanilir
 public class JsonPlaceHolderPojo {
     /*
             {
@@ -13,7 +14,7 @@ public class JsonPlaceHolderPojo {
             }
     */
     private Integer userId;
-    private  String title;
+    private String title;
     private Boolean completed;
 
 
@@ -51,9 +52,6 @@ public class JsonPlaceHolderPojo {
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
-
-
-
 
 
     @Override

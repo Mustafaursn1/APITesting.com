@@ -9,7 +9,7 @@ import pojo.JsonPlaceHolderPojo;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
-public class Post03Pojo  extends JsonPlaceholderBaseUrl {
+public class Post03Pojo extends JsonPlaceholderBaseUrl {
 
     /*
     Given
@@ -33,40 +33,32 @@ public class Post03Pojo  extends JsonPlaceholderBaseUrl {
 */
 
     @Test
-    public void post01(){
+    public void post01() {
         //set the Url
-        spec.pathParam("first","todos");
+        spec.pathParam("first", "todos");
         //set the expected Datda
-        JsonPlaceHolderPojo expectedData=new JsonPlaceHolderPojo(55,"Tidy your room",false);
+        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false);
 
-        System.out.println("expectedData: "+expectedData.toString());//toString() olsa da olmasas da yazdirir.
+        System.out.println("expectedData: " + expectedData.toString());//toString() olsa da olmasas da yazdirir.
 
 
         //send the Post Request and Get the Response
 
-        Response response=given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
         //Do Assertion
 
-        JsonPlaceHolderPojo actualData=response.as(JsonPlaceHolderPojo.class);
-        System.out.println("actualData: "+actualData);
+        JsonPlaceHolderPojo actualData = response.as(JsonPlaceHolderPojo.class);
+        System.out.println("actualData: " + actualData);
 
-        assertEquals(201,response.statusCode());
-        assertEquals(expectedData.getUserId(),actualData.getUserId());
-        assertEquals(expectedData.getTitle(),actualData.getTitle());
-        assertEquals(expectedData.getCompleted(),actualData.getCompleted());
-
-
-
-
+        assertEquals(201, response.statusCode());
+        assertEquals(expectedData.getUserId(), actualData.getUserId());
+        assertEquals(expectedData.getTitle(), actualData.getTitle());
+        assertEquals(expectedData.getCompleted(), actualData.getCompleted());
 
 
     }
-
-
-
-
 
 
 }

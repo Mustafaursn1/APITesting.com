@@ -47,43 +47,38 @@ public class Post04Pojo extends RestfulBaseUrl {
      */
 
     @Test
-    public void post01(){
+    public void post01() {
 
         //1 set the Url
-        spec.pathParam("first","booking");
+        spec.pathParam("first", "booking");
         //2 set the Expected Data;
-        BookingDatesPojo bookingDate=new BookingDatesPojo("2024-09-21","2024-12-21");
+        BookingDatesPojo bookingDate = new BookingDatesPojo("2024-09-21", "2024-12-21");
 
-        BookingPojo expectedData=new BookingPojo("Ali","Can",999,true,bookingDate,"Breakfast");
+        BookingPojo expectedData = new BookingPojo("Ali", "Can", 999, true, bookingDate, "Breakfast");
 
 
-        System.out.println("expectedData:"+ expectedData);
+        System.out.println("expectedData:" + expectedData);
 
         //3 send the post Requueust and GET the Response
-        Response response=given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
-        BookingResponseBodyPojo actualData=response.as(BookingResponseBodyPojo.class);
-        System.out.println("actualData: "+actualData);
+        BookingResponseBodyPojo actualData = response.as(BookingResponseBodyPojo.class);
+        System.out.println("actualData: " + actualData);
 
         //4 Do Assertion
-        assertEquals(200,response.statusCode());
-        assertEquals(expectedData.getFirstname(),actualData.getBooking().getFirstname());
-        assertEquals(expectedData.getLastname(),actualData.getBooking().getLastname());
-        assertEquals(expectedData.getTotalprice(),actualData.getBooking().getTotalprice());
-        assertEquals(expectedData.getDepositpaid(),actualData.getBooking().getDepositpaid());
-        assertEquals(expectedData.getAdditionalneeds(),actualData.getBooking().getAdditionalneeds());
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedData.getFirstname(), actualData.getBooking().getFirstname());
+        assertEquals(expectedData.getLastname(), actualData.getBooking().getLastname());
+        assertEquals(expectedData.getTotalprice(), actualData.getBooking().getTotalprice());
+        assertEquals(expectedData.getDepositpaid(), actualData.getBooking().getDepositpaid());
+        assertEquals(expectedData.getAdditionalneeds(), actualData.getBooking().getAdditionalneeds());
 
-        assertEquals(bookingDate.getCheckin(),actualData.getBooking().getBookingdates().getCheckin());
-        assertEquals(bookingDate.getCheckout(),actualData.getBooking().getBookingdates().getCheckout());
-
-
-
+        assertEquals(bookingDate.getCheckin(), actualData.getBooking().getBookingdates().getCheckin());
+        assertEquals(bookingDate.getCheckout(), actualData.getBooking().getBookingdates().getCheckout());
 
 
     }
-
-
 
 
 }

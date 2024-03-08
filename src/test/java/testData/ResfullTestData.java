@@ -19,31 +19,27 @@ public class ResfullTestData {
 
      */
 
-    public Map<String,String> bookingDataMeth(String checkin, String checkout ){
-        Map<String,String>  bookingData=new HashMap<>();
-        bookingData.put("checkin",checkin);
-        bookingData.put("checkout",checkout);
+    public Map<String, String> bookingDataMeth(String checkin, String checkout) {
+        Map<String, String> bookingData = new HashMap<>();
+        bookingData.put("checkin", checkin);
+        bookingData.put("checkout", checkout);
 
 
-
-
-
-       return  bookingData;
+        return bookingData;
     }
 
-    public Map<String ,Object> expectedDataMeth(String firstName,String lastName,
-                                               Integer totalPrice,Boolean depositPaid,Map<String,String> bookingDate){
-        Map<String,Object> expectedData=new HashMap<>();
-        expectedData.put("firstname",firstName);
-        expectedData.put("lastname",lastName);
-        expectedData.put("totalprice",totalPrice);
-        expectedData.put("depositpaid",depositPaid);
-        expectedData.put("bookingdates",bookingDate);
+    public Map<String, Object> expectedDataMeth(String firstName, String lastName,
+                                                Integer totalPrice, Boolean depositPaid, Map<String, String> bookingDate) {
+        Map<String, Object> expectedData = new HashMap<>();
+        expectedData.put("firstname", firstName);
+        expectedData.put("lastname", lastName);
+        expectedData.put("totalprice", totalPrice);
+        expectedData.put("depositpaid", depositPaid);
+        expectedData.put("bookingdates", bookingDate);
 
 
-    return expectedData;
+        return expectedData;
     }
-
 
 
 }
