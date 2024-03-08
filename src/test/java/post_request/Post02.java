@@ -62,7 +62,7 @@ public class Post02 extends RestfulBaseUrl {
 
         //send teh Request end Get The Response
 
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).post("/{first}");
+        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
         //Do Assert
