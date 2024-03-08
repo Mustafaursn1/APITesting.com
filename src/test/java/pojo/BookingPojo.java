@@ -1,27 +1,36 @@
 package pojo;
 
 public class BookingPojo {
-
+    /*
+    firstname": "Ali ",
+       "Lastname": "Can",
+       "totalprice": 999,
+       "depositpaid": true,
+       "bookingdates": {
+                      "checkin": "2024-09-21",
+                       "checkout": "2024-12-21"
+                       },
+       "additionalneeds": "Breakfast"
+       }
+     */
     private String firstname;
     private String lastname;
     private Integer totalprice;
-    private Boolean depositpaid;
+    private  Boolean depositpaid;
     private BookingDatesPojo bookingdates;
     private String additionalneeds;
 
-    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additionalneeds) {
+    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo dates, String additionalneeds) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
         this.depositpaid = depositpaid;
-        this.bookingdates = bookingdates;
+        this.bookingdates = dates;
         this.additionalneeds = additionalneeds;
     }
 
     public BookingPojo() {
-
     }
-
 
     public String getFirstname() {
         return firstname;
@@ -78,12 +87,8 @@ public class BookingPojo {
                 ", lastname='" + lastname + '\'' +
                 ", totalprice=" + totalprice +
                 ", depositpaid=" + depositpaid +
-                ", bookingdates=" + bookingdates +
+                ", dates=" + bookingdates +
                 ", additionalneeds='" + additionalneeds + '\'' +
                 '}';
-
-
     }
-
-
 }

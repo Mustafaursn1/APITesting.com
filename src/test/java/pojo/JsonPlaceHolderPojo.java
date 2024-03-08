@@ -1,6 +1,9 @@
 package pojo;
 
-public class JsonPlacePojo {
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)  //response da olup burda olmayan datayi ignore etmek icin bu anatotion lullanilir
+public class JsonPlaceHolderPojo {
     /*
             {
             "userId": 55,
@@ -12,16 +15,16 @@ public class JsonPlacePojo {
     private Integer userId;
     private  String title;
     private Boolean completed;
-    private Integer id;
 
-    public JsonPlacePojo(Integer userId, String title, Boolean completed, Integer id) {
+
+    public JsonPlaceHolderPojo(Integer userId, String title, Boolean completed) {
         this.userId = userId;
         this.title = title;
         this.completed = completed;
-        this.id = id;
+
     }
 
-    public JsonPlacePojo() {
+    public JsonPlaceHolderPojo() {
 
     }
 
@@ -49,13 +52,9 @@ public class JsonPlacePojo {
         this.completed = completed;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
+
 
     @Override
     public String toString() {
@@ -63,7 +62,6 @@ public class JsonPlacePojo {
                 "userId=" + userId +
                 ", title='" + title + '\'' +
                 ", completed=" + completed +
-                ", id=" + id +
                 '}';
     }
 }
