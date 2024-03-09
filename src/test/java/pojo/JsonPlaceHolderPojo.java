@@ -16,12 +16,14 @@ public class JsonPlaceHolderPojo {
     private Integer userId;
     private String title;
     private Boolean completed;
+    private int id;
 
 
-    public JsonPlaceHolderPojo(Integer userId, String title, Boolean completed) {
+    public JsonPlaceHolderPojo(Integer userId, String title, Boolean completed,int id) {
         this.userId = userId;
         this.title = title;
         this.completed = completed;
+        this.id=id;
 
     }
 
@@ -53,13 +55,21 @@ public class JsonPlaceHolderPojo {
         this.completed = completed;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
-        return "JsonPlacePojo{" +
+        return "JsonPlaceHolderPojo{" +
                 "userId=" + userId +
                 ", title='" + title + '\'' +
                 ", completed=" + completed +
+                ", id=" + id +
                 '}';
     }
 }

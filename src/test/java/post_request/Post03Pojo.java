@@ -37,7 +37,7 @@ public class Post03Pojo extends JsonPlaceholderBaseUrl {
         //set the Url
         spec.pathParam("first", "todos");
         //set the expected Datda
-        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false);
+        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false,201);
 
         System.out.println("expectedData: " + expectedData.toString());//toString() olsa da olmasas da yazdirir.
 
