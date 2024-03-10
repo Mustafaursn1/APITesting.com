@@ -30,12 +30,13 @@ public class Get14ObjectMapper_Pojo extends JsonPlaceholderBaseUrl {
         }
       */
 
+    // ObjectMapper and Pojo -->Best Practice
     @Test
     public void get01(){
         //1 set the Url
         spec.pathParams("first","todos","second",198);
 
-        //set the expected Data
+        //2 set the expected Data
 
         JsonPlaceHolderPojo expectedData=new JsonPlaceHolderPojo(10,"quis eius est sint explicabo",true,198);
         String expectedDataInString=new JsonPlaceholderTestData().expectedDataInString(10,"quis eius est sint explicabo",true);
@@ -43,19 +44,19 @@ public class Get14ObjectMapper_Pojo extends JsonPlaceholderBaseUrl {
         Map<String,Object> expectedDataMap= ObjectMapperUtils.convertJsonToJava(expectedDataInString,Map.class);
         System.out.println("expected DataMap:"+expectedDataMap+"\n"+"expectedData:"+expectedData);
 
-        //send the get Requeest and Get the Response
+        //3 send the get Requeest and Get the Response
 
 
         Response response=given().spec(spec).when().get("/{first}/{second}");
 
-        //Do Assertion
+        //4 Do Assertion
 
-        Map<String,Object> actualData=ObjectMapperUtils.convertJsonToJava(response.asString(),Map.class);
+      JsonPlaceHolderPojo actualData=ObjectMapperUtils.convertJsonToJava(response.asString(),JsonPlaceHolderPojo.class);
 
         assertEquals(200,response.statusCode());
-        assertEquals(expectedDataMap.get("userId"),actualData.get("userId"));
-        assertEquals(expectedDataMap.get("title"),actualData.get("title"));
-        assertEquals(expectedDataMap.get("completed"),actualData.get("completed"));
+        assertEquals(expectedData.getUserId(),actualData.getUserId());
+        assertEquals(expectedData.getTitle(),actualData.getTitle());
+        assertEquals(expectedData.getCompleted(),actualData.getCompleted());
 
 
 
