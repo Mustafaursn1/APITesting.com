@@ -24,12 +24,10 @@ public class Get14ObjectMapper extends JsonPlaceholderBaseUrl {
        {
         "userId": 10,
         "id": 198,
-        "titte" "quis elus est sint explicabo",
+        "titte" "quis eius est sint explicabo",
         "completed": true
         }
-
-
-     */
+      */
 
     @Test
     public void get01() {
@@ -37,25 +35,26 @@ public class Get14ObjectMapper extends JsonPlaceholderBaseUrl {
         spec.pathParams("first", "todos", "second", 198);
 
         //2 set the Expected Data and get the Response
-       String expectedData= new JsonPlaceholderTestData().expectedDataInString(10,"quis eius est sint explicabo",true);
-        Map<String,Object> expectedDataMap=ObjectMapperUtils.convertJsonToJava(expectedData, Map.class);
-        System.out.println("expectedDataMap: "+expectedDataMap);
+        String expectedData = new JsonPlaceholderTestData().expectedDataInString(10, "quis eius est sint explicabo", true);
+        Map<String, Object> expectedDataMap = ObjectMapperUtils.convertJsonToJava(expectedData, Map.class);
+        System.out.println("expectedDataMap: " + expectedDataMap);
 
 
         //3 send the get request and Get the Response
-        Response response=given().spec(spec).when().get("/{first}/{second}");
+        Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
 
         //4 DO Assertions
-        Map<String,Object> actualData=ObjectMapperUtils.convertJsonToJava(response.asString(),Map.class);
-        System.out.println("actualData: "+actualData);
+        Map<String, Object> actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), Map.class);
+        System.out.println("actualData: " + actualData);
 
-        assertEquals(200,response.statusCode());
-        assertEquals(expectedDataMap.get("userId"),actualData.get("userId"));
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedDataMap.get("userId"), actualData.get("userId"));
 
-        assertEquals(expectedDataMap.get("title"),actualData.get("title"));
-        assertEquals(expectedDataMap.get("completed"),actualData.get("completed"));
+        assertEquals(expectedDataMap.get("title"), actualData.get("title"));
+        assertEquals(expectedDataMap.get("completed"), actualData.get("completed"));
+
 
 
     }
