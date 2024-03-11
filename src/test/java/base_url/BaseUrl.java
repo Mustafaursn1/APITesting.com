@@ -10,7 +10,7 @@ import utilities.ConfigurationReader;
     protected static RequestSpecification spec;
     @Before
      public void SetUp() {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("baseUrl2")).build();
+        spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("baseUrl3")).build();
     }
 
 }
