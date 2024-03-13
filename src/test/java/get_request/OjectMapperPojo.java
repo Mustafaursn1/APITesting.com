@@ -3,6 +3,7 @@ package get_request;
 import base_url.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 import pojo.BookingDatesPojo;
 import pojo.BookingPojo;
 import utilities.ObjectMapperUtils;
@@ -10,7 +11,7 @@ import utilities.ObjectMapperUtils;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
-public class Get15 extends RestfulBaseUrl {
+public class OjectMapperPojo extends RestfulBaseUrl {
     /*
     Given
         https://restful-booker.herokuapp.com/booking/1385
@@ -47,7 +48,7 @@ public class Get15 extends RestfulBaseUrl {
 
         //Do Assertions
         BookingPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), BookingPojo.class);
-
+        //Hard Assertions
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getFirstname(), actualData.getFirstname());
         assertEquals(expectedData.getLastname(), actualData.getLastname());
@@ -57,6 +58,24 @@ public class Get15 extends RestfulBaseUrl {
         assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());
 
         assertEquals(expectedData.getAdditionalneeds(), actualData.getAdditionalneeds());
+
+        //soft Assertion
+        //1 step
+        SoftAssert softAssert = new SoftAssert();
+
+        //2 step
+        softAssert.assertEquals(actualData.getFirstname(), expectedData.getFirstname(),"firstname is not equal");
+        softAssert.assertEquals(actualData.getLastname(), expectedData.getLastname());
+        softAssert.assertEquals(actualData.getDepositpaid(), expectedData.getDepositpaid());
+        softAssert.assertEquals(actualData.getTotalprice(), expectedData.getTotalprice());
+        softAssert.assertEquals(actualData.getAdditionalneeds(), expectedData.getAdditionalneeds());
+
+        softAssert.assertEquals(actualData.getBookingdates().getCheckin(), bookingDatesPojo.getCheckin());
+        softAssert.assertEquals(actualData.getBookingdates().getCheckout(), bookingDatesPojo.getCheckout());
+
+
+        //3 step
+        softAssert.assertAll();
 
 
     }
