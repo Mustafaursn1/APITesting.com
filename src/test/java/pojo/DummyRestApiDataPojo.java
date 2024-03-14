@@ -25,13 +25,12 @@ public class DummyRestApiDataPojo {
     private Integer id;
 
 
-    public DummyRestApiDataPojo(String employee_name, Integer employee_salary, Integer employee_age, String profile_image,Integer id) {
+    public DummyRestApiDataPojo(String employee_name, Integer employee_salary, Integer employee_age, String profile_image, Integer id) {
         this.employee_name = employee_name;
         this.employee_salary = employee_salary;
         this.employee_age = employee_age;
         this.profile_image = profile_image;
-        this.id=id;
-
+        this.id = id;
     }
 
     public DummyRestApiDataPojo() {
@@ -67,8 +66,6 @@ public class DummyRestApiDataPojo {
 
     public void setProfile_image(String profile_image) {
         this.profile_image = profile_image;
-
-
     }
 
     public Integer getId() {

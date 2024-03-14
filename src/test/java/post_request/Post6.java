@@ -95,6 +95,12 @@ Assert：
         System.out.println("actualData: "+actualData);
 
         Assert.assertEquals(200,response.statusCode());
+        Assert.assertEquals(innerPojo.getEmployee_name(),actualData.getData().getEmployee_name());
+        Assert.assertEquals(innerPojo.getEmployee_age(),actualData.getData().getEmployee_age());
+        Assert.assertEquals(innerPojo.getEmployee_salary(),actualData.getData().getEmployee_salary());
+        Assert.assertEquals(innerPojo.getProfile_image(),actualData.getData().getProfile_image());
+        Assert.assertEquals(expectedData.getMessage(),actualData.getMessage());
+        Assert.assertEquals(expectedData.getStatus(),actualData.getStatus());
 
 
 

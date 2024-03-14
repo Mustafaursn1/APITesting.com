@@ -38,7 +38,7 @@ public class DummyRestApiResponseBodyPojo {
         this.status = status;
     }
 
-    public Object getData() {
+    public DummyRestApiDataPojo getData() {
         return data;
     }
 
@@ -56,7 +56,7 @@ public class DummyRestApiResponseBodyPojo {
 
     @Override
     public String toString() {
-        return "DummyPojo{" +
+        return "DummyRestApiResponseBodyPojo{" +
                 "status='" + status + '\'' +
                 ", data=" + data +
                 ", message='" + message + '\'' +
