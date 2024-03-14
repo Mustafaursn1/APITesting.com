@@ -9,6 +9,6 @@ public class DummyRestApiBaseUrl {
     protected static RequestSpecification spec;
     @Before
     public void SetUp() {
-        spec = new RequestSpecBuilder().setBaseUri(ConfigurationReader.getProperty("https://dummy.restapiexample.com/api/v1")).build();
+        spec = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1").build();
     }
 }
