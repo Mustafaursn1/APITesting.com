@@ -8,6 +8,7 @@ import pojo.DummyRestApiDataPojo;
 import pojo.DummyRestApiResponseBodyPojo;
 import utilities.ObjectMapperUtils;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -106,7 +107,7 @@ public class Get16 extends DummyRestApiBaseUrl {
 
         int sum5=0;
         int caunt=0;
-        for (int i = 0; i <= salaries.size(); i++) {
+        for (int i = 0; i < salaries.size(); i++) {
             sum5+=salaries.get(i);
             caunt++;
 
@@ -126,6 +127,27 @@ public class Get16 extends DummyRestApiBaseUrl {
 
     }
 
+
+    @Test
+    public void test01(){
+
+        List<Integer> say=new ArrayList<>();
+        say.add(10);
+        say.add(20);
+        say.add(123);
+        say.add(2534);
+
+
+
+
+        say.stream().forEach(t->System.out.println(t));
+        int toplam=say.stream().reduce(1,(t,u)->t*u);
+        System.out.println("toplam:"+toplam);
+        System.out.println("carpim_"+10*20*123*2534);
+
+
+
+    }
 
 
 
